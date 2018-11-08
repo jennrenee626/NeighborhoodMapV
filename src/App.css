@@ -1,0 +1,77 @@
+#map {
+  height: calc(100vh - 40px);
+  width: calc(100% - 325px);
+  margin: 0%;
+  right: 0px;
+  position: absolute;
+}
+
+/*----------------header----------------*/
+h1 {
+  height: 40px;
+  margin: 0%;
+  text-align: right;
+  background-color: goldenrod;
+  color: white;
+  font-family: ‘Gill Sans’, ‘Gill Sans MT’, Calibri, ‘Trebuchet MS’, sans-serif;
+}
+
+/*----------------sidebar----------------*/
+#sidebar {
+  position: fixed;
+  background-color: grey;
+  width: 325px;
+  max-width: 100%;
+  height: 100%;
+  z-index: 20;
+  top: 0%;
+  left: 0%;
+  padding-top: 20px;
+  overflow-y: scroll;
+  /* box-sizing: border-box; */
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 5px;
+  text-align: center;
+}
+.buttons {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 5px;
+  text-align: center;
+}
+
+/*----------------smaller screens----------------*/
+@media screen and (max-width: 650px) {
+
+  .App{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+    "h1 sidebar map"
+  }
+
+  .h1 {
+    grid-area: h1;
+  }
+
+  #sidebar {
+    grid-area: sidebar;    
+  }
+
+  
+#map {
+  grid-area: map;
+}
+}

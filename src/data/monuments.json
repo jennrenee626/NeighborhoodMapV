@@ -1,0 +1,44 @@
+[
+    {
+    "key" : 0,
+    "title": "Franklin Delano Roosevelt Memorial", 
+    "address": "1850 West Basin Dr SW, Washington, DC 20242", 
+    "location": {"lat": 38.8834579, "lng": -77.0429536},
+    "url" : "https://en.wikipedia.org/wiki/Franklin_Delano_Roosevelt_Memorial"
+    },
+    {
+    "key" : 1,
+    "title": "Thomas Jefferson Memorial", 
+    "address": "701 E Basin Dr SW, Washington, DC 20242", 
+    "location": {"lat": 38.8813806, "lng": -77.0364536},
+    "url" : "https://en.wikipedia.org/wiki/Jefferson_Memorial"
+    },
+    {
+    "key" : 2,
+    "title": "Martin Luther King, Jr. Memorial", 
+    "address": "1964 Independence Ave SW, Washington, DC 20024", 
+    "location": {"lat": 38.8862302, "lng": -77.0442344},
+    "url" : "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr._Memorial"
+    },
+    {
+    "key" : 3,
+    "title": "Washington Monument", 
+    "address": "2 15th St NW, Washington, DC 20024", 
+    "location": {"lat": 38.8894838, "lng": -77.0352791},
+    "url" : "https://en.wikipedia.org/wiki/Washington_Monument"
+    },
+    {
+    "key" : 4,
+    "title": "Lincoln Memorial", 
+    "address": "2 Lincoln Memorial Cir NW, Washington, DC 20037", 
+    "location": {"lat": 38.8892686, "lng": -77.050176},
+    "url" : "https://en.wikipedia.org/wiki/Lincoln_Memorial"
+    },
+    {
+    "key" : 5,
+    "title": "Vietnam Veterans Memorial", 
+    "address": "5 Henry Bacon Dr NW, Washington, DC 20245", 
+    "location": {"lat": 38.8912933, "lng": -77.0477132},
+    "url" : "https://en.wikipedia.org/wiki/Vietnam_Veterans_Memorial"
+    }
+]
