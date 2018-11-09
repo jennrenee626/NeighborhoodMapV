@@ -64,8 +64,9 @@ class App extends Component {
       });
       monument.marker = marker;
 
-      const content = `${monument.title}` + " <br/>" + `${monument.address}` + "<br/>" + `<a href="${monument.url}"> Click here more information from Wiki!</a>`;
-
+      const content = (
+      `${monument.title} <br/> ${monument.address} <br/> <a href="${monument.url}"> Click here more information from Wiki!</a>`)
+      
       //click on marker, open infowindow and bounce marker
       marker.addListener("click", () => {
         infoBox.open(map, marker);
@@ -90,33 +91,33 @@ class App extends Component {
 filterMonuments = (query) => {
   const searchedMonuments = this.state.monuments.filter(monument => {
     const queryMatch = monument.title.toLowerCase().includes(query.toLowerCase());
-    if (queryMatch) {
-      monument.marker.setVisible(true);
-    } else {
-      monument.marker.setVisible(false);
-    }
+    if (queryMatch) {monument.marker.setVisible(true);
+    } else {monument.marker.setVisible(false);}
     return queryMatch;
   })
-  this.setState({ searchedMonuments });
-  this.setState({query});
+  this.setState({ searchedMonuments, query });
   console.log (query)
 }
 
-buttonClick = () => {
+buttonClick = (monument) => {
   // if button == monument title = show info window
-  
-
+  const marker = this.markers.filter(marker => marker.key === monument.key);
+  console.log(marker);
   console.log('button clicked');
+}
+
+componentDidCatch() {
+  alert("There was a problem with the Google Maps API.");
 }
 
 render() {
   return (
     <div className="App">
       <h1>Monuments in DC (Neighborhood Map P7)</h1>
-    <div tabIndex="3" aria-label="Map" id="map" />
+    <div role="application" tabIndex="3" aria-label="Map" id="map" />
 
     <div id="sidebar">
-      <input role="textbox" tabIndex="1" aria-label="Filter Monuments Input" className="input" placeholder="Filter Monuments" value={this.state.query} onChange={(e) => {this.filterMonuments(e.target.value)}}/>
+      <input tabIndex="1" aria-label="Filter Monuments Input" className="input" placeholder="Filter Monuments" value={this.state.query} onChange={(e) => {this.filterMonuments(e.target.value)}}/>
       <List monuments={this.state.monuments} searchedMonuments={this.state.searchedMonuments} buttonClick={this.buttonClick} />
       </div>
     </div>
