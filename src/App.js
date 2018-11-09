@@ -20,6 +20,7 @@ class App extends Component {
     window.initMap = this.initMap
   }
 
+  //calls json data from external myjson.com API with additional data
   componentDidMount = () => {
     axios.get("https://api.myjson.com/bins/tkfjy").then(res =>
       this.setState(
@@ -34,6 +35,7 @@ class App extends Component {
     );
   };
 
+    //initialize map
     initMap = () => {
     const map = new window.google.maps.Map(document.getElementById("map"), {
       zoom: 13,
@@ -48,6 +50,7 @@ class App extends Component {
 
     const { monuments } = this.state;
 
+    //loop through monuments array to create marker for each monument
     const markers = monuments.map(monument => {
       const marker = new window.google.maps.Marker({
         position: {
@@ -63,6 +66,7 @@ class App extends Component {
 
       const content = `${monument.title}` + " <br/>" + `${monument.address}` + "<br/>" + `<a href="${monument.url}"> Click here more information from Wiki!</a>`;
 
+      //click on marker, open infowindow and bounce marker
       marker.addListener("click", () => {
         infoBox.open(map, marker);
         infoBox.setContent(content);
@@ -82,6 +86,7 @@ class App extends Component {
     this.setState({ markers });
   };
 
+//compares what user types in to monuments array, if match marker shows
 filterMonuments = (query) => {
   const searchedMonuments = this.state.monuments.filter(monument => {
     const queryMatch = monument.title.toLowerCase().includes(query.toLowerCase());
@@ -108,10 +113,10 @@ render() {
   return (
     <div className="App">
       <h1>Monuments in DC (Neighborhood Map P7)</h1>
-    <div id="map" />
+    <div tabIndex="3" aria-label="Map" id="map" />
 
     <div id="sidebar">
-      <input className="input" placeholder="Filter Monuments" value={this.state.query} onChange={(e) => {this.filterMonuments(e.target.value)}}/>
+      <input role="textbox" tabindex="1" aria-label="Filter Monuments Input" className="input" placeholder="Filter Monuments" value={this.state.query} onChange={(e) => {this.filterMonuments(e.target.value)}}/>
       <List monuments={this.state.monuments} searchedMonuments={this.state.searchedMonuments} buttonClick={this.buttonClick} />
       </div>
     </div>
