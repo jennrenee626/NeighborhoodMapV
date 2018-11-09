@@ -4,6 +4,12 @@ import axios from "axios";
 import List from "./Components/List";
 
 class App extends Component {
+
+  // constructor(props) {
+  //   super(props);
+  //   this.buttonClick = this.buttonClick.bind(this);
+  // }
+  
   state = {
     monuments: [], // unchanging --> reference point
     query: "",
@@ -97,7 +103,7 @@ filterMonuments = (query) => {
 }
 
 buttonClick = () => {
-  console.log('button clicked', this);
+  console.log('button clicked');
 }
 
   render() {
