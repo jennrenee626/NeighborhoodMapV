@@ -106,18 +106,17 @@ buttonClick = () => {
   console.log('button clicked');
 }
 
-  render() {
-    const { monuments, searchedMonuments} = this.state;
-    return (
-      <div className="App">
-        <h1>Monuments in DC (Neighborhood Map P7)</h1>
-        <div id="map" />
+render() {
+  return (
+    <div className="App">
+      <h1>Monuments in DC (Neighborhood Map P7)</h1>
+    <div id="map" />
 
-        <div id="sidebar">
-        <input className="input" placeholder="Filter Monuments" value={this.state.query} onChange={(e) => {this.filterMonuments(e.target.value)}}/>
-        <List monuments={monuments} searchedMonuments={searchedMonuments} buttonClick={this.buttonClick} />
-        </div>
+    <div id="sidebar">
+      <input className="input" placeholder="Filter Monuments" value={this.state.query} onChange={(e) => {this.filterMonuments(e.target.value)}}/>
+      <List monuments={this.state.monuments} searchedMonuments={this.state.searchedMonuments} buttonClick={this.buttonClick} />
       </div>
+    </div>
     );
   }
 }

@@ -1,14 +1,18 @@
-import React from "react";
+import React, {Component}  from "react";
 import "../App.css";
 
-const ListItem = ({ monument }) => {
-  return (
-    <div>
-      <div className="buttons">
-        <button key={monument.key} onClick={this.props.buttonClick()}>{monument.title}</button>
+class ListItem extends Component {
+
+  render() {
+    return (
+      <div>
+        <div className="buttons">
+          <button key={this.props.monument.key} buttonClick={this.props.buttonClick}>{this.props.monument.title}</button>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
+}
+
 
 export default ListItem;

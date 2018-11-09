@@ -1,15 +1,18 @@
-import React from "react";
+import React, {Component} from "react";
 import "../App.css";
 import ListItem from "./ListItem";
 
-const List = ({ searchedMonuments }) => {
+class List extends Component {
+
+render() {
   return (
     <div>
-      {searchedMonuments.map(monument => {
+      {this.props.searchedMonuments.map(monument => {
         return <ListItem key={monument.key} monument={monument} buttonClick={this.props.buttonClick}/>;
       })}
     </div>
   );
 };
+}
 
 export default List;
