@@ -101,6 +101,7 @@ filterMonuments = (query) => {
 
 buttonClick = (monument) => {
   // if button == monument title = show info window
+  markers = {this.state.markers ? this.state.markers : []};
   const marker = this.markers.filter(marker => marker.key === monument.key);
   console.log(marker);
   console.log('button clicked');
