@@ -39,7 +39,7 @@ class App extends Component {
     initMap = () => {
     const map = new window.google.maps.Map(document.getElementById("map"), {
       zoom: 13,
-      scrollwhell: true,
+      scrollwheel: true,
       center: { lat: 38.9072, lng: -77.0369 },
       mapTypeControl: false
     });
@@ -116,7 +116,7 @@ render() {
     <div tabIndex="3" aria-label="Map" id="map" />
 
     <div id="sidebar">
-      <input role="textbox" tabindex="1" aria-label="Filter Monuments Input" className="input" placeholder="Filter Monuments" value={this.state.query} onChange={(e) => {this.filterMonuments(e.target.value)}}/>
+      <input role="textbox" tabIndex="1" aria-label="Filter Monuments Input" className="input" placeholder="Filter Monuments" value={this.state.query} onChange={(e) => {this.filterMonuments(e.target.value)}}/>
       <List monuments={this.state.monuments} searchedMonuments={this.state.searchedMonuments} buttonClick={this.buttonClick} />
       </div>
     </div>

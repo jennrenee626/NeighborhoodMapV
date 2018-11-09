@@ -1,37 +1,35 @@
 .App {
   height: 100vh;
   width: 100vw;
-}
+  display: grid;
+  grid-gap: 2px;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 30% 70%;
+  grid-template-areas:
+  "h1 h1" "sidebar map";
+  }
 
 #map {
-  height: calc(100vh - 40px);
-  width: calc(100% - 325px);
-  margin: 0%;
-  right: 0px;
-  bottom: 0px;
-  position: absolute;
+grid-area: map;
 }
 
 /*----------------header----------------*/
 h1 {
-  height: 40px;
   margin: 0%;
-  text-align: right;
+  padding-top: 15px;
+  z-index: 5000;
+  text-align: center;
   background-color: goldenrod;
   color: white;
+  grid-area: h1;
   font-family: ‘Gill Sans’, ‘Gill Sans MT’, Calibri, ‘Trebuchet MS’, sans-serif;
 }
 
 /*----------------sidebar----------------*/
 #sidebar {
-  position: fixed;
   background-color: grey;
-  width: 325px;
-  max-width: 100%;
-  height: 100%;
+  grid-area: sidebar;
   z-index: 20;
-  top: 0%;
-  left: 0%;
   padding-top: 20px;
   overflow-y: scroll;
   /* box-sizing: border-box; */
@@ -60,23 +58,12 @@ h1 {
 @media screen and (max-width: 650px) {
 
   .App{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-rows: 90px 1fr 1fr;
+    grid-template-rows: 70px 1fr 1fr;
+    grid-template-columns: auto; 
     grid-template-areas:
     "h1" "sidebar" "map";
   }
-
   h1 {
-    grid-area: h1;
+    font-size: 25px;
   }
-
-  #sidebar {
-    grid-area: sidebar;    
-  }
-
-  
-#map {
-  grid-area: map;
-}
 }
