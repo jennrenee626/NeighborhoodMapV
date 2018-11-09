@@ -25,7 +25,7 @@ The project dependencies include Font Awesome, Google Fonts, MyJson API, and Wik
 Use Neighborhood map to filter between six predetermined monuments/memorials. Click markers for more information and exact location.
 
 App Resources:
-https://www.npmjs.com/package/axios
-Ryan Waite Walkthrough https://www.youtube.com/watch?v=5J6fs_BlVC0&feature=youtu.be
-Yahya Elharony Walkthrough Video 2 https://www.youtube.com/watch?v=W5LhLZqj76s 
-1 on 1: JamesDBartlett3, Rodrick[FEND], drunkenkismet [FEND] Project Coach
+* https://www.npmjs.com/package/axios
+* Ryan Waite Walkthrough https://www.youtube.com/watch?v=5J6fs_BlVC0&feature=youtu.be
+* Yahya Elharony Walkthrough Video 2 https://www.youtube.com/watch?v=W5LhLZqj76s 
+* 1 on 1: JamesDBartlett3, Rodrick[FEND], drunkenkismet [FEND] Project Coach
