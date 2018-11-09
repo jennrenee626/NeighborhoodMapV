@@ -4,11 +4,6 @@ import axios from "axios";
 import List from "./Components/List";
 
 class App extends Component {
-
-  // constructor(props) {
-  //   super(props);
-  //   this.buttonClick = this.buttonClick.bind(this);
-  // }
   
   state = {
     monuments: [], // unchanging --> reference point
@@ -103,6 +98,9 @@ filterMonuments = (query) => {
 }
 
 buttonClick = () => {
+  // if button == monument title = show info window
+  
+
   console.log('button clicked');
 }
 

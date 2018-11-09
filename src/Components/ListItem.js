@@ -7,7 +7,7 @@ class ListItem extends Component {
     return (
       <div>
         <div className="buttons">
-          <button key={this.props.monument.key} buttonClick={this.props.buttonClick}>{this.props.monument.title}</button>
+          <button key={this.props.monument.key} onClick={this.props.buttonClick}>{this.props.monument.title}</button>
         </div>
       </div>
     );
