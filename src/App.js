@@ -75,13 +75,11 @@ class App extends Component {
           marker.setAnimation(null);
         } else {
           marker.setAnimation(window.google.maps.Animation.BOUNCE); //have to click to close - fix
-        }
+        } setTimeout(() => {marker.setAnimation(null)}, 2000);
       })
       infoBox.addListener('closeclick', () => {
         marker.setAnimation(null);
       }); 
-      
-      
       return monument;
     });
     this.setState({ markers });
@@ -99,13 +97,28 @@ filterMonuments = (query) => {
   console.log (query)
 }
 
-buttonClick = (monument) => {
-  // if button == monument title = show info window
-  markers = {this.state.markers ? this.state.markers : []};
-  const marker = this.markers.filter(marker => marker.key === monument.key);
-  console.log(marker);
-  console.log('button clicked');
-}
+ // if list button clicked and marker key === monument key = show info window
+ buttonClick = (e, monument) => {
+  // if button click, marker key === monument key then show info window and animate marker
+  const { markers } = this.state;
+  const {infoBox} = this.state;
+  const {map} = this.state;
+    markers.forEach(marker => {
+        if (marker.key === monument.key) {
+          infoBox.open(map, marker.marker);
+          infoBox.setContent(
+            `${monument.title} <br/> ${monument.address} <br/> <a href="${monument.url}"> Click here more information from Wiki!</a>`);
+            if (marker.marker.getAnimation() !== null) {
+              marker.marker.setAnimation(null);
+            } else {
+              marker.marker.setAnimation(window.google.maps.Animation.BOUNCE);
+            } setTimeout(() => {marker.marker.setAnimation(null)}, 2000);
+          }
+          infoBox.addListener('closeclick', () => {
+           marker.marker.setAnimation(null);
+          }); 
+      });
+  };
 
 componentDidCatch() {
   alert("There was a problem with the Google Maps API.");
