@@ -31,8 +31,11 @@ class App extends Component {
         () => {
           this.renderMap();
         }
+        
       )
-    );
+    ).catch(error => {
+      console.log(error)
+    });
   };
 
     //initialize map
