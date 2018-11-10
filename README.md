@@ -12,6 +12,10 @@ To get started:
 * install all project dependencies with `npm install`
 * start the development server with `npm start` 
 
+By default, the create-react-app used to create this application includes a service worker in the production build.
+
+If user wants to see this app running in production mode, go here: [https://neighborhoodappv.herokuapp.com/]
+
 ## Dependencies
 
 The project dependencies include Font Awesome, Google Fonts, MyJson API, and Wikipedia.
@@ -23,7 +27,6 @@ The project dependencies include Font Awesome, Google Fonts, MyJson API, and Wik
 ## Notes
 
 Use Neighborhood map to filter between six predetermined monuments/memorials. Click markers for more information and exact location.
-
 
 
 App Resources:
